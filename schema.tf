@@ -3,7 +3,6 @@ resource "null_resource" "load-schema" {
 
   provisioner "local-exec" {
     command = <<EOF
-sleep 60
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
 cd /tmp
 unzip -o mongodb.zip
