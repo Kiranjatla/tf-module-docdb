@@ -8,7 +8,7 @@ resource "aws_docdb_subnet_group" "default" {
 }
 
 resource "aws_docdb_cluster" "docdb" {
-  depends_on = [aws_docdb_subnet_group.default]
+  depends_on             = [aws_docdb_subnet_group.default]
   cluster_identifier     = "${var.env}-${var.name}-roboshop-docdb"
   engine                 = var.engine
   master_username        = local.DOCDB_USER
